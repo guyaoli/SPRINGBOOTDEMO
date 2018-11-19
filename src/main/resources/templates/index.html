@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script src="bootstrap/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/bootstrap.min.css" />
+    <!--meta如果不加反斜杠结束，thymeleaf解析html5报错。html5中meta不加反斜杠不报错-->
+    <meta charset="UTF-8"/>
+    <title>springboot</title>
+</head>
+<body>
+    <!--<div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">访问model</h3>
+        </div>
+        <div class="panel-body">
+            <span th:text="${singlePerson.name}"></span>
+        </div>
+        <div th:if="${not #lists.isEmpty(people)}">
+            <div class="panel panel-primary">
+                <h3 class="panel-title">列表</h3>
+            </div>
+            <div class="panel-body">
+                <ul class="panel-group">
+                    <li class="list-group-item" th:each="person:${people}">
+                        <span th:text="${person.name}"></span>
+                        <span th:text="${person.age}"></span>
+                        <button class="btn" th:onclick="'getName(\''+${person.name}+'\')'">获得名字</button>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>-->
+    <h2>用户列表</h2>
+    <div>
+        <ul>
+            <li  th:each="user:${users}">
+                <span th:text="${user.id}"></span>-
+                <span th:text="${user.name}"></span>-
+                <span th:text="${user.age}"></span>-
+                <span th:text="${user.address}"></span>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.gu.springdemo1.sys.dao.UserDao">
+    <sql id="userColumns">
+        a.id AS "id",
+        a.name AS "name",
+        a.age AS "age",
+        a.address AS "address"
+    </sql>
+    <select id="findUserByName" parameterType="String" resultType="com.gu.springdemo1.sys.entity.User">
+        select * from user where name = #{value}
+    </select>
+</mapper>
